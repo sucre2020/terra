@@ -1,0 +1,50 @@
+{% extends 'layout.html' %} {% block title %} Our Services - Terra Balance
+Enterprises {% endblock %} {% block content %}
+<h1>Our Services</h1>
+<p>Explore our range of comprehensive agricultural support services:</p>
+
+<ul class="services-list">
+  <li>
+    <i class="fas fa-comments"></i> <strong>Consultation:</strong> Initial
+    discussion to understand your goals.
+  </li>
+  <li>
+    <i class="fas fa-map-marker-alt"></i>
+    <strong>Site Assessment:</strong> Evaluate land and resources.
+  </li>
+  <li>
+    <i class="fas fa-cogs"></i> <strong>Customized Plan:</strong> Tailored setup
+    plan for your venture.
+  </li>
+  <li>
+    <i class="fas fa-seedling"></i> <strong>Implementation:</strong> Guidance
+    for executing the setup.
+  </li>
+  <li>
+    <i class="fas fa-chalkboard-teacher"></i>
+    <strong>Training:</strong> Hands-on training programs.
+  </li>
+  <div class="farming-services">
+    <div class="service-card">
+      <img src="images/goat-farming.jpg" alt="Goat Farming" />
+      <h2>Goat Farming</h2>
+      <p>
+        Comprehensive training on goat rearing: breed selection, housing,
+        nutrition, health management, and marketing strategies.
+      </p>
+      <a href="/goat-farming" class="learn-more">Learn More &gt;&gt;&gt;</a>
+    </div>
+  
+    <div class="service-card">
+      <img src="images/pig-farming.jpg" alt="Pig Farming" />
+      <h2>Pig Farming</h2>
+      <p>
+        Learn efficient pig farming techniques including breed selection, housing
+        design, feeding, disease prevention, and market access.
+      </p>
+      <a href="/pig-farming" class="learn-more">Learn More &gt;&gt;&gt;</a>
+    </div>
+</ul>
+
+<a href="/register" class="cta-button">Register for Consultation</a>
+{% endblock %}

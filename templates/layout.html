@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Terra Balance Enterprises{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('products') }}">Products</a></li>
+          <li><a href="{{ url_for('services') }}">Services</a></li>
+          <li>
+            <a href="{{ url_for('stories_projects') }}">Stories And Projects</a>
+          </li>
+          <li><a href="{{ url_for('about') }}">About Us</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+          <li><a href="{{ url_for('login') }}">Login</a></li>
+          <li>
+            <a href="{{ url_for('cart') }}">
+              <img
+                src="{{ url_for('static', filename='images/cart.png') }}"
+                width="50"
+                alt="Shopping Cart"
+              />
+              Cart
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <footer>
+      <p>&copy; 2025 Terra Balance Enterprises. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+{% extends 'layout.html' %} {% block title %} Products - Terra Balance
+Enterprises {% endblock %} {% block content %}
+<h1>Our Products</h1>
+<p>
+  At Terra Balance Enterprises, we offer a diverse range of farming products
+  designed to empower farmers and businesses.
+</p>
+
+<div class="farming-services">
+  <div class="service-card">
+    <img src="/static/images/farm1.webp" alt="Sheep" />
+    <h2>Sheep</h2>
+    <p>#50,000</p>
+    <label for="sheep-gender">Gender:</label>
+    <select id="sheep-gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <label for="sheep-color">Color:</label>
+    <select id="sheep-color">
+      <option value="brown">Brown</option>
+      <option value="white">White</option>
+      <option value="black">Black</option>
+    </select>
+    <a href="/checkout" class="learn-more">Add To Cart</a>
+  </div>
+
+  <div class="service-card">
+    <img src="/static/images/morePigs.jpg" alt="pig" />
+    <h2>Pig</h2>
+    <p>#150,000</p>
+    <label for="pig-gender">Gender:</label>
+    <select id="pig-gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <label for="pig-color">Color:</label>
+    <select id="pig-color">
+      <option value="brown">Brown</option>
+      <option value="white">White</option>
+      <option value="black">Black</option>
+    </select>
+    <a href="/checkout" class="learn-more">Add To Cart</a>
+  </div>
+  <div class="service-card">
+    <img src="/static/images/turkeyFarming.jpg" alt="Turkey" />
+    <h2>Turkey</h2>
+    <p>#80,000</p>
+    <label for="turkey-gender">Gender:</label>
+    <select id="turkey-gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <label for="turkey-color">Color:</label>
+    <select id="turkey-color">
+      <option value="brown">Brown</option>
+      <option value="white">White</option>
+      <option value="black">Black</option>
+    </select>
+    <a href="/checkout" class="learn-more">Add To Cart</a>
+  </div>
+  <div class="service-card">
+    <img src="/static/images/farm1.webp" alt="Goat" />
+    <h2>Goat</h2>
+    <p>#50,000</p>
+    <label for="goat-gender">Gender:</label>
+    <select id="goat-gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <label for="goat-color">Color:</label>
+    <select id="goat-color">
+      <option value="brown">Brown</option>
+      <option value="white">White</option>
+      <option value="black">Black</option>
+    </select>
+    <a href="/checkout" class="learn-more">Add To Cart</a>
+  </div>
+  <div class="service-card">
+    <img src="/static/images/snailFarm.webp" alt="Snail" />
+    <h2>Snail</h2>
+    <p>#50,000 Per 10Kg</p>
+    <label for="snail-gender">Gender:</label>
+    <select id="snail-gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <label for="snail-color">Color:</label>
+    <select id="snail-color">
+      <option value="brown">Brown</option>
+      <option value="white">White</option>
+      <option value="black">Black</option>
+    </select>
+    <a href="/checkout" class="learn-more">Add To Cart</a>
+  </div>
+</div>
+{% endblock %}
