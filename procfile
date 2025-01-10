@@ -1,1 +1,1 @@
-web: gunicorn calculate_date:app
+web: gunicorn app:app
