@@ -1,45 +1,43 @@
 from flask import Flask, render_template
+from dotenv import load_dotenv
+from flask import session
+import os
+load_dotenv()
+from routes.home import home_bp
+from routes.about import about_bp
+from routes.cart import cart_bp
+from routes.contact import contact_bp
+from routes.layout import layout_bp
+from routes.login import login_bp
+from routes.products import products_bp
+from routes.services import services_bp
+from routes.stories_projects import stories_projects_bp
+from routes.submit_contact import submit_contact_bp
+
+
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return render_template('home.html')
+app.secret_key = os.getenv('SECRET_KEY')
 
-@app.route('/layout')
-def layout():
-    return render_template('layout.html')
+app.register_blueprint(home_bp)
+app.register_blueprint(about_bp)
+app.register_blueprint(cart_bp)
+app.register_blueprint(contact_bp)
+app.register_blueprint(layout_bp)
+app.register_blueprint(login_bp)
+app.register_blueprint(products_bp)
+app.register_blueprint(services_bp)
+app.register_blueprint(stories_projects_bp)
+app.register_blueprint(submit_contact_bp)
 
-@app.route('/services')
-def services():
-    return render_template('services.html')
+@app.context_processor
+def inject_cart_item_count():
+    cart = session.get('cart', [])
+    cart_item_count = sum(item['quantity'] for item in cart)
+    return {'cart_item_count': cart_item_count}
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
-@app.route('/submit_contact')
-def submit_contact():
-    return render_template('submit_contact.html')
-
-@app.route('/stories_projects')
-def stories_projects():
-    return render_template('stories_projects.html')
-
-@app.route('/products')
-def products():
-    return render_template('products.html')
-
-@app.route('/login')
-def login():
-    return render_template('login.html')
-
-@app.route('/cart')
-def cart():
-    return render_template('cart.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

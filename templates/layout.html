@@ -13,30 +13,41 @@
     <header>
       <nav>
         <ul>
-          <li><a href="{{ url_for('home') }}">Home</a></li>
-          <li><a href="{{ url_for('products') }}">Products</a></li>
-          <li><a href="{{ url_for('services') }}">Services</a></li>
+          <li><a href="{{ url_for('home.home') }}">Home</a></li>
           <li>
-            <a href="{{ url_for('stories_projects') }}">Stories And Projects</a>
+            <a href="{{ url_for('products.show_products') }}">Products</a>
           </li>
-          <li><a href="{{ url_for('about') }}">About Us</a></li>
-          <li><a href="{{ url_for('contact') }}">Contact</a></li>
-          <li><a href="{{ url_for('login') }}">Login</a></li>
+          <li><a href="{{ url_for('services.services') }}">Services</a></li>
           <li>
-            <a href="{{ url_for('cart') }}">
-              <img
-                src="{{ url_for('static', filename='images/cart.png') }}"
-                width="50"
-                alt="Shopping Cart"
-              />
-              Cart
-            </a>
+            <a href="{{ url_for('stories_projects.stories_projects') }}"
+              >Stories And Projects</a
+            >
+          </li>
+          <li><a href="{{ url_for('about.about') }}">About Us</a></li>
+          <li><a href="{{ url_for('contact.contact') }}">Contact</a></li>
+          <li><a href="{{ url_for('login.login') }}">Login</a></li>
+          <li>
+            <a href="{{ url_for('products.cart') }}">
+              <i class="cart-icon">🛒</i>
+              {% if cart_item_count > 0 %}
+              <span class="cart-count">{{ cart_item_count }}</span>
+              {% endif %} Cart</a
+            >
           </li>
         </ul>
       </nav>
     </header>
 
-    <main>{% block content %}{% endblock %}</main>
+    <main>
+      {% block content %} {% with messages = get_flashed_messages() %} {% if
+      messages %}
+      <div class="flash-message">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+      </div>
+      {% endif %} {% endwith %} {% endblock %}
+    </main>
 
     <footer>
       <p>&copy; 2025 Terra Balance Enterprises. All rights reserved.</p>
