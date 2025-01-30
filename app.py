@@ -13,6 +13,7 @@ from routes.products import products_bp
 from routes.services import services_bp
 from routes.stories_projects import stories_projects_bp
 from routes.submit_contact import submit_contact_bp
+from routes.auth_routes import auth_bp
 
 
 
@@ -30,6 +31,7 @@ app.register_blueprint(products_bp)
 app.register_blueprint(services_bp)
 app.register_blueprint(stories_projects_bp)
 app.register_blueprint(submit_contact_bp)
+app.register_blueprint(auth_bp)
 
 @app.context_processor
 def inject_cart_item_count():
