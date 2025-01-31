@@ -14,6 +14,11 @@ from routes.services import services_bp
 from routes.stories_projects import stories_projects_bp
 from routes.submit_contact import submit_contact_bp
 from routes.auth_routes import auth_bp
+from routes.goatfarming import goatfarming_bp
+from routes.pigfarming import pigfarming_bp
+from routes.snailfarming import snailfarming_bp
+from routes.turkeyfarming import turkeyfarming_bp
+from routes.horsefarming import horsefarming_bp
 
 
 
@@ -32,6 +37,11 @@ app.register_blueprint(services_bp)
 app.register_blueprint(stories_projects_bp)
 app.register_blueprint(submit_contact_bp)
 app.register_blueprint(auth_bp)
+app.register_blueprint(goatfarming_bp)
+app.register_blueprint(pigfarming_bp)
+app.register_blueprint(snailfarming_bp)
+app.register_blueprint(turkeyfarming_bp)
+app.register_blueprint(horsefarming_bp)
 
 @app.context_processor
 def inject_cart_item_count():

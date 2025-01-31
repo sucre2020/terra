@@ -8,6 +8,11 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/styles.css') }}"
     />
+    <!-- Add Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <header>
@@ -20,33 +25,40 @@
           <li><a href="{{ url_for('services.services') }}">Services</a></li>
           <li>
             <a href="{{ url_for('stories_projects.stories_projects') }}"
-              >Stories And Projects</a
+              >Projects</a
             >
           </li>
           <li><a href="{{ url_for('about.about') }}">About Us</a></li>
           <li><a href="{{ url_for('contact.contact') }}">Contact</a></li>
-          <li><a href="{{ url_for('login.login') }}">Login</a></li>
+
+          {% if session['user_id'] %}
+          <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+          {% else %}
+          <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+          {% endif %}
+
           <li>
             <a href="{{ url_for('products.cart') }}">
-              <i class="cart-icon">🛒</i>
+              <i class="fas fa-shopping-cart cart-icon"></i>
               {% if cart_item_count > 0 %}
               <span class="cart-count">{{ cart_item_count }}</span>
-              {% endif %} Cart</a
-            >
+              {% endif %} Cart
+            </a>
           </li>
         </ul>
       </nav>
     </header>
 
     <main>
-      {% block content %} {% with messages = get_flashed_messages() %} {% if
+      {% with messages = get_flashed_messages(with_categories=True) %} {% if
       messages %}
-      <div class="flash-message">
-        {% for message in messages %}
-        <p>{{ message }}</p>
+
+      <div class="flash-messages">
+        {% for category, message in messages %}
+        <p class="flash-message {{ category }}">{{ message }}</p>
         {% endfor %}
       </div>
-      {% endif %} {% endwith %} {% endblock %}
+      {% endif %} {% endwith %} {% block content %} {% endblock %}
     </main>
 
     <footer>
