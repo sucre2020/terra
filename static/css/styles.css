@@ -31,6 +31,7 @@ a:hover {
   width: 90%;
   margin: 0 auto;
   padding: 20px;
+  margin-top: 50px;
 }
 
 /* Header */
@@ -282,6 +283,7 @@ nav ul li a:hover .cart-icon {
 
 .central {
   text-align: center;
+  margin-top: 50px;
 }
 
 /* Footer */
